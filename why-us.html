@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Us | JuYou Think</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .adv-table {
+      display: grid; grid-template-columns: 1fr 2px 1fr; gap: 0;
+      background: var(--white); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--gray-100);
+      margin-top: 3rem;
+    }
+    .adv-divider { background: var(--blue-200); position: relative; }
+    .adv-divider::after {
+      content: 'VS'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      background: var(--red); color: var(--white); width: 42px; height: 42px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em;
+    }
+    .adv-col { padding: 2.5rem; }
+    .adv-col-header { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--gray-100); }
+    .adv-ai .adv-col-header { color: var(--gray-500); }
+    .adv-us .adv-col-header { color: var(--blue-600); }
+    .adv-row { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.8rem 0; border-bottom: 1px solid var(--gray-100); }
+    .adv-row:last-child { border-bottom: none; }
+    .adv-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .adv-text h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .adv-ai .adv-text h4 { color: var(--gray-500); }
+    .adv-us .adv-text h4 { color: var(--blue-900); }
+    .adv-text p { font-size: 0.8rem; line-height: 1.5; }
+    .adv-ai .adv-text p { color: var(--gray-500); }
+    .adv-us .adv-text p { color: var(--gray-700); }
+
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 3rem; }
+    .why-card {
+      padding: 2.5rem; border: 1px solid var(--blue-100); transition: var(--transition);
+      position: relative; overflow: hidden; background: var(--white);
+    }
+    .why-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--blue-300); }
+    .why-card-icon { width: 48px; height: 48px; background: var(--blue-100); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.2rem; }
+    .why-card-num { position: absolute; top: 1.5rem; right: 1.5rem; font-family: var(--serif); font-size: 3.5rem; font-weight: 700; color: var(--blue-50); line-height: 1; }
+    .why-card h3 { margin-bottom: 0.7rem; font-size: 1.1rem; color: var(--blue-900); }
+    .why-card p { font-size: 0.85rem; }
+
+    .coverage-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 2.5rem; border: 1px solid var(--blue-100); border-radius: var(--radius-lg); overflow: hidden; }
+    .cov-stat { padding: 2rem; text-align: center; border-right: 1px solid var(--blue-100); }
+    .cov-stat:last-child { border-right: none; }
+    .cov-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 700; color: var(--blue-700); display: block; line-height: 1; }
+    .cov-unit { color: var(--blue-400); }
+    .cov-label { font-size: 0.8rem; color: var(--gray-500); margin-top: 0.5rem; }
+
+    .approach-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .approach-card {
+      background: var(--blue-50); padding: 2.2rem; border-radius: var(--radius-lg);
+      border: 1px solid var(--blue-100); transition: var(--transition);
+    }
+    .approach-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--blue-300); }
+    .approach-card h3 { color: var(--blue-900); font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .approach-card p { font-size: 0.85rem; }
+
+    @media (max-width:768px) {
+      .adv-table { grid-template-columns: 1fr; }
+      .adv-divider { height: 2px; }
+      .adv-divider::after { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .coverage-stats { grid-template-columns: 1fr 1fr; }
+      .approach-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav nav-page" id="navbar">
+    <div class="container"><div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="images/juyou-logo-blue.png" alt="聚优思维" /></div><span class="nav-logo-text"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优</span></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh" style="display:none">首页</span></a></li>
+        <li><a href="services.html"><span class="lang-en">Services</span><span class="lang-zh" style="display:none">服务</span></a></li>
+        <li><a href="why-us.html" class="active"><span class="lang-en">Why Us</span><span class="lang-zh" style="display:none">为什么选我们</span></a></li>
+        <li><a href="cases.html"><span class="lang-en">Case Studies</span><span class="lang-zh" style="display:none">案例研究</span></a></li>
+        <li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh" style="display:none">团队</span></a></li>
+        <li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh" style="display:none">联系我们</span></a></li>
+      </ul>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()" title="Switch Language">EN / 中</button>
+      <a href="contact.html" class="btn btn-red nav-cta"><span class="lang-en">Get in Touch</span><span class="lang-zh" style="display:none">联系我们</span></a>
+    </div></div>
+  </nav>
+
+  <section class="page-hero" style="background:linear-gradient(160deg,rgba(9,31,47,0.92) 0%,rgba(20,74,108,0.88) 50%,rgba(25,138,205,0.85) 100%),url('images/hero-city.png') center/cover no-repeat">
+    <div class="container">
+      <div class="section-label"><span class="lang-en">Why JuYou Think</span><span class="lang-zh" style="display:none">为什么选择聚优思维</span></div>
+      <h1><span class="lang-en">Boutique Depth.</span><span class="lang-zh" style="display:none">精品深度。</span><br/><span class="lang-en">Global Standards.</span><span class="lang-zh" style="display:none">全球标准。</span></h1>
+      <p class="section-subtitle"><span class="lang-en">We combine top-tier research rigor with the agility and senior attention that only a boutique firm can deliver.</span><span class="lang-zh" style="display:none">我们将顶级研究严谨性与唯有精品公司才能提供的敏捷性和资深团队关注度相结合。</span></p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--blue-50)">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-card-num">01</div>
+          <div class="why-card-icon">🌏</div>
+          <h3><span class="lang-en">Deep China Market Expertise</span><span class="lang-zh" style="display:none">深厚的中国市场专长</span></h3>
+          <p><span class="lang-en">From tier-1 megacities to rural villages, our team has conducted face-to-face research across 40+ cities and 5–6 tier markets. We understand the nuances — regional dialects, purchasing rituals, and unspoken consumer culture.</span><span class="lang-zh" style="display:none">从一线大都市到乡村，我们的团队在40+城市和5-6级市场开展过面对面调研。我们理解其中细微差别——地区方言、购买习惯和潜意识的消费文化。</span></p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-num">02</div>
+          <div class="why-card-icon">🎯</div>
+          <h3><span class="lang-en">Outcomes-First Service Model</span><span class="lang-zh" style="display:none">成果导向的服务模式</span></h3>
+          <p><span class="lang-en">We break organizational silos through cross-functional co-creation workshops. Senior researchers personally oversee fieldwork and output — ensuring every deliverable has real depth and breadth.</span><span class="lang-zh" style="display:none">我们通过跨职能共创工作坊打破组织壁垒。资深研究员亲自监督实地执行和成果输出——确保每份交付物都具有真正的深度和广度。</span></p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-num">03</div>
+          <div class="why-card-icon">⚡</div>
+          <h3><span class="lang-en">AI-Augmented Efficiency</span><span class="lang-zh" style="display:none">AI增强的效率</span></h3>
+          <p><span class="lang-en">We leverage AI for faster synthesis and smarter pattern recognition. But our human researchers bring what AI cannot — empathy, cultural judgment, and the ability to read what people mean beyond what they say.</span><span class="lang-zh" style="display:none">我们利用AI实现更快的综合分析和更智能的模式识别。但我们的研究员带来AI无法触及的——共情力、文化判断力，以及理解言外之意的能力。</span></p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-num">04</div>
+          <div class="why-card-icon">🏆</div>
+          <h3><span class="lang-en">顶级背景，精品专注</span><span class="lang-zh" style="display:none">顶级背景，精品专注</span></h3>
+          <p><span class="lang-en">创始团队拥有世界500强企业研究背景，15年以上中国市场调研经验。我们既能提供大公司级的研究严谨度，又保持精品公司特有的灵活性和定制化服务。</span><span class="lang-zh" style="display:none">创始团队拥有世界500强企业研究背景，15年以上中国市场调研经验。我们既能提供大公司级的研究严谨度，又保持精品公司特有的灵活性和定制化服务。</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label"><span class="lang-en">Human Intelligence vs. Artificial Intelligence</span><span class="lang-zh" style="display:none">人类智慧 vs. 人工智能</span></div>
+        <h2 class="section-title"><span class="lang-en">Why Research Still Needs Humans</span><span class="lang-zh" style="display:none">为什么研究仍然需要人</span></h2>
+        <p class="section-subtitle"><span class="lang-en">AI tools are powerful for scale and speed. But understanding <em>why</em> Chinese consumers do what they do requires human presence, cultural fluency, and contextual interpretation.</span><span class="lang-zh" style="display:none">AI工具在规模和速度上很强大。但理解中国消费者行为背后的原因需要人的在场、文化流畅性和情境解读。</span></p>
+      </div>
+      <div class="adv-table">
+        <div class="adv-col adv-ai">
+          <div class="adv-col-header"><span class="lang-en">AI-Only Research Tools</span><span class="lang-zh" style="display:none">纯AI研究工具</span></div>
+          <div class="adv-row"><span class="adv-icon">⚠️</span><div class="adv-text"><h4><span class="lang-en">Shallow Context</span><span class="lang-zh" style="display:none">浅层语境</span></h4><p><span class="lang-en">Processes publicly available text — cannot access unspoken behavior or emotional reactions.</span><span class="lang-zh" style="display:none">处理公开文本——无法触及未表达的行为或情感反应。</span></p></div></div>
+          <div class="adv-row"><span class="adv-icon">⚠️</span><div class="adv-text"><h4><span class="lang-en">No Cultural Nuance</span><span class="lang-zh" style="display:none">缺乏文化细微差别</span></h4><p><span class="lang-en">Cannot differentiate between regional dialects, social contexts, or implicit communication styles.</span><span class="lang-zh" style="display:none">无法区分地区方言、社会语境或含蓄的沟通风格。</span></p></div></div>
+          <div class="adv-row"><span class="adv-icon">⚠️</span><div class="adv-text"><h4><span class="lang-en">Static Snapshots</span><span class="lang-zh" style="display:none">静态快照</span></h4><p><span class="lang-en">Analyzes past data. Misses emerging shifts and first-mover signals.</span><span class="lang-zh" style="display:none">分析历史数据。错失新兴变化和先动信号。</span></p></div></div>
+          <div class="adv-row"><span class="adv-icon">⚠️</span><div class="adv-text"><h4><span class="lang-en">No Actionable Advice</span><span class="lang-zh" style="display:none">难以落地的策略建议</span></h4><p><span class="lang-en">Generates patterns, not prescriptions. Cannot translate findings into business decisions.</span><span class="lang-zh" style="display:none">输出模式化。</span></p></div></div>
+          <div class="adv-row"><span class="adv-icon">⚠️</span><div class="adv-text"><h4><span class="lang-en">Generic Output</span><span class="lang-zh" style="display:none">通用输出</span></h4><p><span class="lang-en">One-size-fits-all. Cannot tailor methodology to your specific brand or strategic question.</span><span class="lang-zh" style="display:none">千篇一律。无法针对您的具体品牌或战略问题量身定制方法论。无法将发现转化为商业决策。</span></p></div></div>
+        </div>
+        <div class="adv-divider"></div>
+        <div class="adv-col adv-us">
+          <div class="adv-col-header"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优思维</span></div>
+          <div class="adv-row"><span class="adv-icon">✅</span><div class="adv-text"><h4><span class="lang-en">In-Home Depth Interviews</span><span class="lang-zh" style="display:none">入户深度访谈</span></h4><p><span class="lang-en">1-on-1 visits in users' own environments reveal real habits, unstated needs, and authentic reactions.</span><span class="lang-zh" style="display:none">在用户真实环境中的一对一观察，揭示真实习惯、未表达的需求和真实反应。</span></p></div></div>
+          <div class="adv-row"><span class="adv-icon">✅</span><div class="adv-text"><h4><span class="lang-en">Native Cultural Intelligence</span><span class="lang-zh" style="display:none">本土文化智慧</span></h4><p><span class="lang-en">15+ years navigating Chinese consumer psyche — from Tier 1 elites to rural silver-generation buyers.</span><span class="lang-zh" style="display:none">15年以上深耕中国消费者心理——从一线精英到乡村银发族买家。</span></p></div></div>
+          <div class="adv-row"><span class="adv-icon">✅</span><div class="adv-text"><h4><span class="lang-en">Real-Time Field Discovery</span><span class="lang-zh" style="display:none">实时田野发现</span></h4><p><span class="lang-en">We uncover trends as they form — through observation, expert interviews, and direct market engagement.</span><span class="lang-zh" style="display:none">我们通过观察、专家访谈和直接市场参与，在趋势形成之初就予以发现。</span></p></div></div>
+          <div class="adv-row"><span class="adv-icon">✅</span><div class="adv-text"><h4><span class="lang-en">Bespoke Methodology</span><span class="lang-zh" style="display:none">定制方法论</span></h4><p><span class="lang-en">Qualitative, quantitative, desk research, big data, and hybrid — designed around your exact question.</span><span class="lang-zh" style="display:none">定性、定量、案头研究、大数据及混合方法——围绕您的确切问题设计。</span></p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--off-white)">
+    <div class="container">
+      <div class="grid-2" style="gap:4rem;align-items:start">
+        <div>
+          <div class="section-label"><span class="lang-en">On-the-Ground Reach</span><span class="lang-zh" style="display:none">实地覆盖能力</span></div>
+          <h2 class="section-title"><span class="lang-en">China Coverage Like No Other</span><span class="lang-zh" style="display:none">无可比拟的中国覆盖</span></h2>
+          <p style="margin-bottom:1rem"><span class="lang-en">We don't just research Shanghai and Beijing. Our fieldwork spans the full spectrum — from coastal megacities to inland third-tier towns and rural villages.</span><span class="lang-zh" style="display:none">我们不仅研究上海和北京。我们的实地工作覆盖全谱系——从沿海大都市到内陆三线城镇和乡村。</span></p>
+          <img src="images/hero-city.png" alt="China coverage" style="width:100%;border-radius:12px;margin-top:1.2rem" />
+          <div class="coverage-stats" style="grid-template-columns:repeat(2,1fr);margin-top:2rem">
+            <div class="cov-stat"><span class="cov-num">40<span class="cov-unit">+</span></span><div class="cov-label"><span class="lang-en">Cities Researched</span><span class="lang-zh" style="display:none">研究城市</span></div></div>
+            <div class="cov-stat"><span class="cov-num">5–6</span><div class="cov-label"><span class="lang-en">Tier Markets Covered</span><span class="lang-zh" style="display:none">覆盖市场层级</span></div></div>
+            <div class="cov-stat" style="border-top:1px solid var(--blue-100)"><span class="cov-num">15<span class="cov-unit">+</span></span><div class="cov-label"><span class="lang-en">Years in China</span><span class="lang-zh" style="display:none">中国经验年数</span></div></div>
+            <div class="cov-stat" style="border-top:1px solid var(--blue-100)"><span class="cov-num">1000<span class="cov-unit">+</span></span><div class="cov-label"><span class="lang-en">Consumer Interviews</span><span class="lang-zh" style="display:none">消费者访谈</span></div></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div class="approach-card" style="background:var(--white);border-left:3px solid var(--blue-400)">
+            <h4 style="font-size:0.9rem;margin-bottom:0.3rem;color:var(--blue-800)"><span class="lang-en">🏙️ Tier 1–2 Cities</span><span class="lang-zh" style="display:none">🏙️ 一线二线城市</span></h4>
+            <p style="font-size:0.8rem"><span class="lang-en">Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, Hangzhou — affluent, trend-setting, digitally native consumers.</span><span class="lang-zh" style="display:none">北京、上海、广州、深圳、成都、杭州——富裕、引领潮流、数字原生的消费者。</span></p>
+          </div>
+          <div class="approach-card" style="background:var(--white);border-left:3px solid var(--blue-400)">
+            <h4 style="font-size:0.9rem;margin-bottom:0.3rem;color:var(--blue-800)"><span class="lang-en">🌆 Tier 3–4 Cities</span><span class="lang-zh" style="display:none">🌆 三四线城市</span></h4>
+            <p style="font-size:0.8rem"><span class="lang-en">Xi'an, Nanchang, Changsha — the fast-growing middle market driving China's next consumption wave.</span><span class="lang-zh" style="display:none">西安、南昌、长沙——快速增长的中端市场，驱动中国下一波消费浪潮。</span></p>
+          </div>
+          <div class="approach-card" style="background:var(--white);border-left:3px solid var(--blue-400)">
+            <h4 style="font-size:0.9rem;margin-bottom:0.3rem;color:var(--blue-800)"><span class="lang-en">🌾 Rural & Lower-Tier Markets</span><span class="lang-zh" style="display:none">🌾 乡村与下沉市场</span></h4>
+            <p style="font-size:0.8rem"><span class="lang-en">Deep penetration into village-level and county markets — critical for volume categories.</span><span class="lang-zh" style="display:none">深入村级和县级市场——对于走量品类至关重要。</span></p>
+          </div>
+          <div class="approach-card" style="background:var(--white);border-left:3px solid var(--blue-400)">
+            <h4 style="font-size:0.9rem;margin-bottom:0.3rem;color:var(--blue-800)"><span class="lang-en">👴 Full Consumer Spectrum</span><span class="lang-zh" style="display:none">👴 全消费者谱系</span></h4>
+            <p style="font-size:0.8rem"><span class="lang-en">Children, Gen Z, millennials, silver generation. Low income to high net worth. Power users and first-time buyers.</span><span class="lang-zh" style="display:none">儿童、Z世代、千禧一代、银发族。从低收入到高净值人群。重度用户和首次购买者。</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label"><span class="lang-en">Our Service Model</span><span class="lang-zh" style="display:none">我们的服务模式</span></div>
+        <h2 class="section-title"><span class="lang-en">Everything Oriented Toward Outcomes</span><span class="lang-zh" style="display:none">一切以成果为导向</span></h2>
+        <p class="section-subtitle"><span class="lang-en">Three principles that set our service model apart from traditional research agencies and large consultancies.</span><span class="lang-zh" style="display:none">三大原则使我们的服务模式区别于传统研究机构和大型咨询公司。</span></p>
+      </div>
+      <div class="approach-cards">
+        <div class="approach-card fade-in">
+          <div style="font-size:1.8rem;margin-bottom:0.8rem">🔄</div>
+          <h3><span class="lang-en">Break Organizational Silos</span><span class="lang-zh" style="display:none">打破组织壁垒</span></h3>
+          <p><span class="lang-en">Co-creation workshops at research design and reporting stages — involving cross-functional teams from day one, not just at the final presentation.</span><span class="lang-zh" style="display:none">在研究设计和报告阶段开展共创工作坊——从第一天起就纳入跨职能团队，而非仅在最终汇报时。</span></p>
+        </div>
+        <div class="approach-card fade-in">
+          <div style="font-size:1.8rem;margin-bottom:0.8rem">📋</div>
+          <h3><span class="lang-en">Senior-Led Fieldwork</span><span class="lang-zh" style="display:none">资深主导的实地执行</span></h3>
+          <p><span class="lang-en">Project directors personally oversee all interviews and output — not just project direction — ensuring deliverables have real depth and breadth.</span><span class="lang-zh" style="display:none">项目总监亲自监督所有访谈和成果输出——不仅仅是项目指导——确保交付物具有真正的深度和广度。</span></p>
+        </div>
+        <div class="approach-card fade-in">
+          <div style="font-size:1.8rem;margin-bottom:0.8rem">🧠</div>
+          <h3><span class="lang-en">Internal Capability Building</span><span class="lang-zh" style="display:none">内部能力建设</span></h3>
+          <p><span class="lang-en">We run regular research training for your teams — from leadership to frontline staff — ensuring insights translate into action across the organization.</span><span class="lang-zh" style="display:none">我们为您的团队提供定期研究培训——从领导层到一线员工——确保洞察在整个组织内转化为行动。</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div style="display:flex;align-items:center"><a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="images/juyou-logo-blue.png" alt="聚优思维" /></div><span class="nav-logo-text"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优</span></span></a><span class="footer-tagline"><span class="lang-en">Turning Chinese Consumer Insight into Action</span><span class="lang-zh" style="display:none">将中国消费者洞察转化为行动</span></span></div>
+        <ul class="footer-links"><li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh" style="display:none">首页</span></a></li><li><a href="services.html"><span class="lang-en">Services</span><span class="lang-zh" style="display:none">服务</span></a></li><li><a href="why-us.html"><span class="lang-en">Why Us</span><span class="lang-zh" style="display:none">为什么选我们</span></a></li><li><a href="cases.html"><span class="lang-en">Case Studies</span><span class="lang-zh" style="display:none">案例研究</span></a></li><li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh" style="display:none">团队</span></a></li><li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh" style="display:none">联系我们</span></a></li></ul>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 JuYou Think (聚优思维). All rights reserved.</p><p style="font-size:0.72rem;color:rgba(255,255,255,0.2)">www.juyouthink.com</p></div>
+    </div>
+  </footer>
+  <script src="lang.js"></script>
+  <script>
+    document.querySelectorAll('.fade-in').forEach(el => {
+      const obs = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)} }), {threshold:0.1});
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

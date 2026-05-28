@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | JuYou Think</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
+    .contact-info h3 { color: var(--blue-900); font-size: 1.3rem; margin-bottom: 0.8rem; }
+    .contact-info > p { margin-bottom: 2rem; }
+    .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--gray-100); }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-item-icon {
+      width: 44px; height: 44px; background: var(--blue-50); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-item-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
+    .contact-item-value { font-size: 0.9rem; color: var(--blue-800); margin-top: 0.15rem; }
+    .contact-form-card {
+      background: var(--white); padding: 2.5rem; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md); border: 1px solid var(--blue-100);
+    }
+    .contact-form-card h3 { color: var(--blue-900); font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label { display: block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.4rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.85rem 1rem; background: var(--blue-50); border: 1px solid var(--blue-100);
+      border-radius: var(--radius); color: var(--text); font-size: 0.9rem; font-family: var(--sans);
+      transition: var(--transition); outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue-400); background: var(--white); box-shadow: 0 0 0 3px rgba(46,134,193,0.1); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--gray-300); }
+    .form-group select option { background: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { width: 100%; padding: 0.95rem; font-size: 0.92rem; }
+
+    @media (max-width:768px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav nav-page" id="navbar">
+    <div class="container"><div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="images/juyou-logo-blue.png" alt="聚优思维" /></div><span class="nav-logo-text"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优</span></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+        <li><a href="services.html"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li>
+        <li><a href="why-us.html"><span class="lang-en">Why Us</span><span class="lang-zh">优势</span></a></li>
+        <li><a href="cases.html"><span class="lang-en">Case Studies</span><span class="lang-zh">案例</span></a></li>
+        <li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh">团队</span></a></li>
+        <li><a href="contact.html" class="active"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a></li>
+      </ul>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()" title="Switch Language">EN / 中</button>
+      <a href="contact.html" class="btn btn-red nav-cta"><span class="lang-en">Get in Touch</span><span class="lang-zh">联系我们</span></a>
+    </div></div>
+  </nav>
+
+  <section class="page-hero" style="background:linear-gradient(160deg,rgba(9,31,47,0.93) 0%,rgba(20,74,108,0.89) 50%,rgba(25,138,205,0.85) 100%),url('images/hero-city.png') center/cover no-repeat">
+    <div class="container">
+      <div class="section-label"><span class="lang-en">Work With Us</span><span class="lang-zh">与我们合作</span></div>
+      <h1><span class="lang-en">Get in Touch</span><span class="lang-zh">联系我们</span></h1>
+      <p class="section-subtitle"><span class="lang-en">Whether you are planning market entry, launching a product, or diagnosing brand performance — we can help.</span><span class="lang-zh">无论您是计划进入市场、推出新产品，还是诊断品牌表现——我们都能提供帮助。</span></p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--off-white)">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3><span class="lang-en">Let's Start a Conversation</span><span class="lang-zh">开始交流</span></h3>
+          <p><span class="lang-en">Reach out for a free 30-minute consultation. Tell us about your business challenge in China, and we'll share our initial thoughts on how research can help.</span><span class="lang-zh">联系我们，获取30分钟免费咨询。告诉我们您在中国的业务挑战，我们将分享关于如何通过研究来帮助您的最初想法。</span></p>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div><div class="contact-item-label"><span class="lang-en">Business Inquiries</span><span class="lang-zh">商务咨询</span></div><div class="contact-item-value">polly.sun@juyouthink.com</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🌐</div>
+            <div><div class="contact-item-label"><span class="lang-en">Website</span><span class="lang-zh">网站</span></div><div class="contact-item-value">www.juyouthink.com</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div><div class="contact-item-label"><span class="lang-en">Location</span><span class="lang-zh">地址</span></div><div class="contact-item-value">Shanghai, China</div></div>
+          </div>
+          <img src="images/research-writing.jpeg" alt="Research" style="width:100%;border-radius:12px;margin-top:1.5rem;max-height:200px;object-fit:cover" />
+        </div>
+        <div class="contact-form-card">
+          <h3><span class="lang-en">Send Us a Message</span><span class="lang-zh">发送消息</span></h3>
+          <form id="contactForm" action="https://formspree.io/f/xykvbalk" method="POST" onsubmit="return handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group"><label><span class="lang-en">Your Name</span><span class="lang-zh">姓名</span></label><input type="text" name="name" placeholder="John Smith" required /></div>
+              <div class="form-group"><label><span class="lang-en">Company</span><span class="lang-zh">公司</span></label><input type="text" name="company" placeholder="Your Company" /></div>
+            </div>
+            <div class="form-group"><label><span class="lang-en">Email Address</span><span class="lang-zh">邮箱地址</span></label><input type="email" name="email" placeholder="john@company.com" required /></div>
+            <div class="form-group">
+              <label><span class="lang-en">Service Interest</span><span class="lang-zh">感兴趣的服务</span></label>
+              <select name="service">
+                <option value="">Select a service...</option>
+                <option>Consumer Research & Segmentation</option>
+                <option>Product Innovation Research</option>
+                <option>Brand & Communication Testing</option>
+                <option>Channel & Shopper Journey</option>
+                <option>Big Data Analytics</option>
+                <option>Integrated Research Solution</option>
+                <option>Other / Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="form-group"><label><span class="lang-en">Tell Us About Your Project</span><span class="lang-zh">描述您的项目</span></label><textarea name="message" placeholder="Briefly describe your research need, target market, and timeline (if known)..."></textarea></div>
+            <button type="submit" class="btn btn-primary form-submit"><span class="lang-en">Send Message →</span><span class="lang-zh">发送消息 →</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div style="display:flex;align-items:center"><a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="images/juyou-logo-blue.png" alt="聚优思维" /></div><span class="nav-logo-text"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优</span></span></a><span class="footer-tagline">Turning Chinese Consumer Insight into Action</span></div>
+        <ul class="footer-links"><li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li><li><a href="services.html"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li><li><a href="why-us.html"><span class="lang-en">Why Us</span><span class="lang-zh">优势</span></a></li><li><a href="cases.html"><span class="lang-en">Case Studies</span><span class="lang-zh">案例</span></a></li><li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh">团队</span></a></li><li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a></li></ul>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 JuYou Think (聚优思维). All rights reserved.</p><p style="font-size:0.72rem;color:rgba(255,255,255,0.2)">www.juyouthink.com</p></div>
+    </div>
+  </footer>
+  <script>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const origText = btn.textContent;
+      btn.textContent = 'Sending...'; btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          btn.textContent = 'Message Sent! ✓'; btn.style.background = '#2E7D32';
+          setTimeout(() => { btn.textContent = origText; btn.style.background = ''; btn.disabled = false; form.reset(); }, 4000);
+        } else {
+          btn.textContent = 'Error — Try Again'; btn.style.background = '#C62828';
+          setTimeout(() => { btn.textContent = origText; btn.style.background = ''; btn.disabled = false; }, 3000);
+        }
+      } catch (err) {
+        btn.textContent = 'Network Error'; btn.style.background = '#C62828';
+        setTimeout(() => { btn.textContent = origText; btn.style.background = ''; btn.disabled = false; }, 3000);
+      }
+    }
+  </script>
+  <script src="lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | JuYou Think</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .svc-card {
+      background: var(--white); padding: 2.5rem; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);
+      border-top: 3px solid transparent; transition: var(--transition);
+    }
+    .svc-card:hover { box-shadow: var(--shadow-lg); border-top-color: var(--blue-500); transform: translateY(-4px); }
+    .svc-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .svc-card h3 { font-size: 1.1rem; margin-bottom: 0.7rem; color: var(--blue-900); }
+    .svc-card p { font-size: 0.88rem; }
+    .svc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .svc-tag { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 20px; background: var(--blue-50); color: var(--blue-700); }
+
+    .method-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3.5rem; position: relative; }
+    .method-steps::before { content:''; position:absolute; top:2.5rem; left:12.5%; right:12.5%; height:2px; background:linear-gradient(90deg, var(--blue-400), var(--blue-600)); }
+    .method-step { padding: 0 1.2rem; text-align: center; position: relative; }
+    .method-step-num {
+      width: 50px; height: 50px; border-radius: 50%; background: var(--blue-700);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--white);
+      margin: 0 auto 1.2rem; position: relative; z-index: 1;
+    }
+    .method-step h4 { font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--blue-900); }
+    .method-step p { font-size: 0.8rem; color: var(--gray-500); }
+
+    .methods-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .method-card {
+      background: var(--blue-50); padding: 2rem; border-radius: var(--radius-lg);
+      border-left: 3px solid var(--blue-400);
+    }
+    .method-card h4 { font-size: 0.92rem; margin-bottom: 0.5rem; color: var(--blue-800); }
+    .method-card p { font-size: 0.82rem; }
+    .method-card-icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+
+    @media (max-width:1024px) { .svc-grid { grid-template-columns: repeat(2,1fr); } .method-steps { grid-template-columns: repeat(2,1fr); } .method-steps::before { display:none; } }
+    @media (max-width:768px) { .svc-grid, .methods-row { grid-template-columns: 1fr; } .method-steps { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav nav-page" id="navbar">
+    <div class="container"><div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="images/juyou-logo-blue.png" alt="聚优思维" /></div><span class="nav-logo-text"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优</span></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+        <li><a href="services.html" class="active"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li>
+        <li><a href="why-us.html"><span class="lang-en">Why Us</span><span class="lang-zh">优势</span></a></li>
+        <li><a href="cases.html"><span class="lang-en">Case Studies</span><span class="lang-zh">案例</span></a></li>
+        <li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh">团队</span></a></li>
+        <li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a></li>
+      </ul>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()" title="Switch Language">EN / 中</button>
+      <a href="contact.html" class="btn btn-red nav-cta"><span class="lang-en">Get in Touch</span><span class="lang-zh">联系我们</span></a>
+    </div></div>
+  </nav>
+
+  <section class="page-hero" style="background:linear-gradient(160deg,rgba(9,31,47,0.93) 0%,rgba(20,74,108,0.89) 50%,rgba(25,138,205,0.85) 100%),url('images/hero-city.png') center/cover no-repeat">
+    <div class="container">
+      <div class="section-label"><span class="lang-en">What We Do</span><span class="lang-zh">我们的服务</span></div>
+      <h1><span class="lang-en">End-to-End Research<br/>Services</span><span class="lang-zh">端到端研究<br/>服务</span></h1>
+      <p class="section-subtitle"><span class="lang-en">From early-stage consumer discovery to product launch validation, we cover the full research lifecycle for global brands entering or growing in China.</span><span class="lang-zh">从早期消费者发现到产品上市验证，我们覆盖全球品牌进入或发展中国市场的完整研究生命周期。</span></p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--off-white)">
+    <div class="container">
+      <div class="svc-grid">
+        <div class="svc-card fade-in">
+          <div class="svc-icon">👥</div>
+          <h3><span class="lang-en">Consumer Research</span><span class="lang-zh">消费者研究</span></h3>
+          <p><span class="lang-en">Deep profiling of your target audience — segments, behaviors, motivations, unmet needs, and attitudes across China's diverse regions and demographics.</span><span class="lang-zh">深度剖析目标人群——涵盖人群细分、行为特征、消费动机、未满足需求及态度偏好，覆盖中国多元区域与人口结构。</span></p>
+          <div class="svc-tags"><span class="svc-tag"><span class="lang-en">Segmentation</span><span class="lang-zh">人群细分</span></span><span class="svc-tag"><span class="lang-en">U&A Study</span><span class="lang-zh">使用与态度研究</span></span><span class="svc-tag"><span class="lang-en">Persona</span><span class="lang-zh">用户画像</span></span></div>
+        </div>
+        <div class="svc-card fade-in">
+          <div class="svc-icon">📦</div>
+          <h3><span class="lang-en">Product Innovation</span><span class="lang-zh">产品创新</span></h3>
+          <p><span class="lang-en">Support at every stage of the product lifecycle — from concept exploration and feature testing to in-home usage evaluation and launch optimization.</span><span class="lang-zh">覆盖产品全生命周期的研究支持——从概念探索、功能测试到入户使用评估和上市优化。</span></p>
+          <div class="svc-tags"><span class="svc-tag"><span class="lang-en">Concept Test</span><span class="lang-zh">概念测试</span></span><span class="svc-tag"><span class="lang-en">IHUT</span><span class="lang-zh">入户使用测试</span></span><span class="svc-tag"><span class="lang-en">Innovation</span><span class="lang-zh">创新研究</span></span></div>
+        </div>
+        <div class="svc-card fade-in">
+          <div class="svc-icon">🛒</div>
+          <h3><span class="lang-en">Channel &amp; Purchase Journey</span><span class="lang-zh">渠道与购买链路</span></h3>
+          <p><span class="lang-en">Map your customers' path to purchase across online and offline touchpoints. Identify conversion drivers and channel optimization opportunities.</span><span class="lang-zh">绘制消费者跨线上线下触点的完整购买路径图。识别转化驱动因素与渠道优化机会。</span></p>
+          <div class="svc-tags"><span class="svc-tag"><span class="lang-en">Shopper Journey</span><span class="lang-zh">购物旅程</span></span><span class="svc-tag"><span class="lang-en">Channel Audit</span><span class="lang-zh">渠道审计</span></span></div>
+        </div>
+        <div class="svc-card fade-in">
+          <div class="svc-icon">📣</div>
+          <h3><span class="lang-en">Brand &amp; Communication</span><span class="lang-zh">品牌与沟通</span></h3>
+          <p><span class="lang-en">Measure brand equity, diagnose perception gaps, and test communication messages to ensure your brand positioning resonates with Chinese consumers.</span><span class="lang-zh">衡量品牌资产，诊断认知差距，测试传播信息，确保品牌定位与中国消费者产生共鸣。</span></p>
+          <div class="svc-tags"><span class="svc-tag"><span class="lang-en">Brand Health</span><span class="lang-zh">品牌健康度</span></span><span class="svc-tag"><span class="lang-en">Comms Test</span><span class="lang-zh">传播测试</span></span></div>
+        </div>
+        <div class="svc-card fade-in">
+          <div class="svc-icon">📊</div>
+          <h3><span class="lang-en">Big Data &amp; Analytics</span><span class="lang-zh">大数据与分析</span></h3>
+          <p><span class="lang-en">Integrate image recognition, clustering algorithms, and member data analytics to uncover trends and inform strategic planning at scale.</span><span class="lang-zh">引入图像识别、聚类算法等技术，对会员数据进行分析挖掘，洞察消费趋势，为产品规划、渠道布局提供数据支撑。</span></p>
+          <img src="images/pptx-extracted/image43.jpeg" alt="Data Analytics" style="width:100%;border-radius:8px;margin-top:1rem" />
+          <div class="svc-tags"><span class="svc-tag"><span class="lang-en">Data Mining</span><span class="lang-zh">数据挖掘</span></span><span class="svc-tag"><span class="lang-en">Trend Analysis</span><span class="lang-zh">趋势分析</span></span></div>
+        </div>
+        <div class="svc-card fade-in">
+          <div class="svc-icon">🏢</div>
+          <h3><span class="lang-en">Integrated Solutions</span><span class="lang-zh">一站式解决方案</span></h3>
+          <p><span class="lang-en">Cross-functional, one-stop research that spans demand, consumer, channel, marketing, and brand — with a single deliverable that drives organization-wide alignment.</span><span class="lang-zh">跨职能一站式研究，涵盖需求、消费者、渠道、营销、品牌等环节，以统一交付成果推动组织内协同。</span></p>
+          <div class="svc-tags"><span class="svc-tag"><span class="lang-en">Cross-function</span><span class="lang-zh">跨职能</span></span><span class="svc-tag"><span class="lang-en">Full Report</span><span class="lang-zh">综合报告</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label"><span class="lang-en">Our Approach</span><span class="lang-zh">我们的方法论</span></div>
+        <h2 class="section-title"><span class="lang-en">Research Built for Decisions</span><span class="lang-zh">为决策而生的研究</span></h2>
+        <p class="section-subtitle"><span class="lang-en">Structured yet flexible methodology ensuring every project delivers clarity, not just data.</span><span class="lang-zh">结构化而灵活的方法论，确保每个项目交付的是清晰洞察，而不仅仅是数据。</span></p>
+      </div>
+      <div class="method-steps">
+        <div class="method-step fade-in"><div class="method-step-num">1</div><h4><span class="lang-en">Co-Creation Brief</span><span class="lang-zh">共创简报</span></h4><p><span class="lang-en">Cross-functional workshops to align on the real business question behind the research request.</span><span class="lang-zh">以跨职能工作坊形式，在研究设计初期就对齐企业真正的业务问题。</span></p></div>
+        <div class="method-step fade-in"><div class="method-step-num">2</div><h4><span class="lang-en">Custom Design</span><span class="lang-zh">定制设计</span></h4><p><span class="lang-en">Select and blend the right mix of qualitative, quantitative, and digital methods for your objectives.</span><span class="lang-zh">选择并融合定性、定量、数字方法的最佳组合，量身定制研究方案。</span></p></div>
+        <div class="method-step fade-in"><div class="method-step-num">3</div><h4><span class="lang-en">Senior-Led Fieldwork</span><span class="lang-zh">资深主导执行</span></h4><p><span class="lang-en">Project leads personally conduct or supervise all interviews — no outsourcing of quality.</span><span class="lang-zh">项目负责人亲自带队或全程监督所有访谈——绝不让质量假手于人。</span></p></div>
+        <div class="method-step fade-in"><div class="method-step-num">4</div><h4><span class="lang-en">Actionable Output</span><span class="lang-zh">可落地成果</span></h4><p><span class="lang-en">Reports go beyond findings — prioritized recommendations and internal activation sessions.</span><span class="lang-zh">报告不只呈现发现——更包含优先级建议与内部激活工作坊。</span></p></div>
+      </div>
+      <div class="methods-row">
+        <div class="method-card fade-in">
+          <div class="method-card-icon">🏠</div>
+          <h4><span class="lang-en">In-Home Depth Interviews</span><span class="lang-zh">入户深访</span></h4>
+          <p><span class="lang-en">Visit consumers in their own space for authentic, uninhibited conversations. Observe real product usage and home environments that reveal insights no survey can capture.</span><span class="lang-zh">走进用户家中，在熟悉的环境中展开真实、无拘束的对话。观察真实产品使用场景和家居环境，挖掘问卷无法捕捉的深层洞察。</span></p>
+        </div>
+        <div class="method-card fade-in">
+          <div class="method-card-icon">💬</div>
+          <h4><span class="lang-en">Focus Group Discussions</span><span class="lang-zh">小组座谈会</span></h4>
+          <p><span class="lang-en">Bring together diverse consumer profiles to explore category dynamics, validate hypotheses, and surface group norms that shape purchasing decisions.</span><span class="lang-zh">汇聚不同背景的消费者群体，探索品类动态，验证研究假设，挖掘影响购买决策的群体共识。</span></p>
+        </div>
+        <div class="method-card fade-in">
+          <div class="method-card-icon">📱</div>
+          <h4><span class="lang-en">Online Quantitative Survey</span><span class="lang-zh">在线定量调研</span></h4>
+          <p><span class="lang-en">Validate qualitative discoveries at scale with statistically robust surveys of 1,000+ samples to quantify attitudes, preferences, and market sizing.</span><span class="lang-zh">以千人级统计稳健的在线问卷验证定性发现，量化态度、偏好并估算市场规模。</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" style="background:linear-gradient(135deg,var(--blue-700),var(--blue-600));padding:80px 0;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:relative;z-index:1">
+      <h2 style="color:var(--white);margin-bottom:1rem"><span class="lang-en">Need a Research Partner in China?</span><span class="lang-zh">需要中国研究伙伴？</span></h2>
+      <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 2rem;font-size:1.05rem"><span class="lang-en">Tell us about your project and we'll propose a tailored approach within 48 hours.</span><span class="lang-zh">告诉我们您的项目，我们将在48小时内提出定制方案。</span></p>
+      <a href="contact.html" class="btn btn-red"><span class="lang-en">Contact Us →</span><span class="lang-zh">联系我们 →</span></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div style="display:flex;align-items:center"><a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="images/juyou-logo-blue.png" alt="聚优思维" /></div><span class="nav-logo-text"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优</span></span></a><span class="footer-tagline">Turning Chinese Consumer Insight into Action</span></div>
+        <ul class="footer-links"><li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li><li><a href="services.html"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li><li><a href="why-us.html"><span class="lang-en">Why Us</span><span class="lang-zh">优势</span></a></li><li><a href="cases.html"><span class="lang-en">Case Studies</span><span class="lang-zh">案例</span></a></li><li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh">团队</span></a></li><li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a></li></ul>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 JuYou Think (聚优思维). All rights reserved.</p><p style="font-size:0.72rem;color:rgba(255,255,255,0.2)">www.juyouthink.com</p></div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.fade-in').forEach(el => {
+      const obs = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)} }), {threshold:0.1});
+      obs.observe(el);
+    });
+  </script>
+  <script src="lang.js"></script>
+</body>
+</html>

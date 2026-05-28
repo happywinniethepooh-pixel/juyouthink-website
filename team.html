@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | JuYou Think</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+    .team-card {
+      padding: 2.5rem; border: 1px solid var(--blue-100); border-radius: var(--radius-lg);
+      transition: var(--transition); background: var(--white);
+    }
+    .team-card:hover { border-color: var(--blue-400); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .team-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-500), var(--blue-700));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--white);
+      margin-bottom: 1.2rem; overflow: hidden;
+    }
+    .team-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .team-name { font-size: 1rem; margin-bottom: 0.2rem; color: var(--blue-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .team-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-500); margin-bottom: 1rem; line-height: 1.4; }
+    .team-card p { font-size: 0.85rem; line-height: 1.7; }
+    .team-clients { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--blue-50); }
+    .team-clients span { font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 12px; background: var(--blue-50); color: var(--blue-700); margin-right: 0.3rem; display: inline-block; margin-bottom: 0.3rem; }
+
+    .value-proposition {
+      background: var(--blue-50); padding: 80px 0;
+    }
+    .vp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+    .vp-card {
+      text-align: center; padding: 2rem;
+    }
+    .vp-card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .vp-card h4 { font-size: 0.92rem; margin-bottom: 0.5rem; color: var(--blue-900); }
+    .vp-card p { font-size: 0.82rem; }
+
+    @media (max-width:768px) { .team-grid, .vp-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav nav-page" id="navbar">
+    <div class="container"><div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="images/juyou-logo-blue.png" alt="聚优思维" /></div><span class="nav-logo-text"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优</span></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+        <li><a href="services.html"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li>
+        <li><a href="why-us.html"><span class="lang-en">Why Us</span><span class="lang-zh">优势</span></a></li>
+        <li><a href="cases.html"><span class="lang-en">Case Studies</span><span class="lang-zh">案例</span></a></li>
+        <li><a href="team.html" class="active"><span class="lang-en">Team</span><span class="lang-zh">团队</span></a></li>
+        <li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a></li>
+      </ul>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()" title="Switch Language">EN / 中</button>
+      <a href="contact.html" class="btn btn-red nav-cta"><span class="lang-en">Get in Touch</span><span class="lang-zh">联系我们</span></a>
+    </div></div>
+  </nav>
+
+  <section class="page-hero" style="background:linear-gradient(160deg,rgba(9,31,47,0.93) 0%,rgba(20,74,108,0.89) 50%,rgba(25,138,205,0.85) 100%),url('images/hero-city.png') center/cover no-repeat">
+    <div class="container">
+      <div class="section-label"><span class="lang-en">The People Behind the Insights</span><span class="lang-zh">洞察背后的人</span></div>
+      <h1><span class="lang-en">Our Team</span><span class="lang-zh">我们的团队</span></h1>
+      <p class="section-subtitle"><span class="lang-en">Senior-led, start to finish. Every project is directed by a senior researcher — never delegated to juniors.</span><span class="lang-zh">资深主导，全程把控。每个项目都由资深研究员主导——从不交由初级人员代劳。</span></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="team-grid">
+        <div class="team-card fade-in">
+          <div class="team-avatar" style="overflow:hidden;background:linear-gradient(135deg,var(--blue-500),var(--blue-700))"><img src="images/pptx-extracted/image9.png" alt="Polly Sun" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <h3 class="team-name">Polly Sun 孙若萱</h3>
+          <div class="team-title"><span class="lang-en">Research Director · Qualitative Expert</span><span class="lang-zh">研究总监 · 资深定性主持人</span></div>
+          <p><span class="lang-en">Tongji MBA. Former Kantar senior researcher with 15+ years of qualitative expertise across FMCG, home appliances, automotive, pharma, and internet sectors. Extensive focus group facilitation and in-home interview experience across China's diverse markets.</span><span class="lang-zh">同济MBA毕业，15+年市场研究行业经验，曾服务于Kantar市场研究公司。积累了丰富的访谈和座谈会主持经验，服务客户覆盖快消品、家用电器、汽车、医药、互联网等，包括欧莱雅、美敦力、西门子、美的、海尔、字节跳动等。</span></p>
+          <div class="team-clients">
+            <span class="lang-en">L'Oréal</span><span class="lang-zh">欧莱雅</span><span class="lang-en">Medtronic</span><span class="lang-zh">美敦力</span><span class="lang-en">Siemens</span><span class="lang-zh">西门子</span><span class="lang-en">Midea</span><span class="lang-zh">美的</span><span class="lang-en">Haier</span><span class="lang-zh">海尔</span><span class="lang-en">ByteDance</span><span class="lang-zh">字节跳动</span>
+          </div>
+        </div>
+        <div class="team-card fade-in">
+          <div class="team-avatar" style="overflow:hidden;background:linear-gradient(135deg,var(--blue-500),var(--blue-700))"><img src="images/pptx-extracted/image10.png" alt="Kevin Liu" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <h3 class="team-name">Kevin Liu 刘诣渊</h3>
+          <div class="team-title"><span class="lang-en">Market Positioning & Big Data Expert</span><span class="lang-zh">市场定位专家 · 大数据研究</span></div>
+          <p><span class="lang-en">Integrated strategy specialist combining qualitative, TMIC, big data (SIA), and AI methods. Manages cross-category clients across luxury, FMCG, tech, healthcare, and finance. Co-founded a data-driven industry media platform. Background in brand strategy, product R&D planning, and community operations.</span><span class="lang-zh">同济MBA毕业，曾先后供职于消费电子、汽车电子等世界500强公司，前后在日本、法国等国家轮岗工作。同时拥有大数据分析及品牌战略定位经验，曾与团队成功创立基于大数据的行业媒体并拥有粉丝运营经验。善于管理跨类别、不同行业的本地及全球客户，主要专注于奢美、快消品、科技、医疗、金融等。</span></p>
+          <div class="team-clients">
+            <span class="lang-en">QiaoDan</span><span class="lang-zh">乔丹</span><span class="lang-en">Tencent</span><span class="lang-zh">腾讯</span><span class="lang-en">iQiyi</span><span class="lang-zh">爱奇艺</span><span class="lang-en">Luxury Watch</span><span class="lang-zh">奢侈手表</span><span class="lang-en">OTC / Pharma</span><span class="lang-zh">OTC / 医药</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="value-proposition">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label"><span class="lang-en">Our Team Philosophy</span><span class="lang-zh">团队理念</span></div>
+        <h2 class="section-title"><span class="lang-en">What Makes Our Team Different</span><span class="lang-zh">我们团队的不同之处</span></h2>
+      </div>
+      <div class="vp-grid">
+        <div class="vp-card fade-in">
+          <div class="vp-card-icon">🎓</div>
+          <h4><span class="lang-en">Top-Tier Training</span><span class="lang-zh">顶级培训</span></h4>
+          <p><span class="lang-en">Founding team trained at Kantar with Fortune 500 corporate research experience. Academic credentials from Tongji MBA.</span><span class="lang-zh">创始团队在Kantar接受培训，具备世界500强企业研究经验。拥有同济MBA学术背景。</span></p>
+        </div>
+        <div class="vp-card fade-in">
+          <div class="vp-card-icon">👁️</div>
+          <h4><span class="lang-en">Hands-On Leadership</span><span class="lang-zh">亲力亲为</span></h4>
+          <p><span class="lang-en">Directors personally lead fieldwork and interviews. Not just project managers — active researchers with deep expertise.</span><span class="lang-zh">总监亲自带队实地调研和访谈。不只是项目经理——而是拥有深厚专业知识的活跃研究员。</span></p>
+        </div>
+        <div class="vp-card fade-in">
+          <div class="vp-card-icon">🌐</div>
+          <h4><span class="lang-en">Cross-Cultural Fluency</span><span class="lang-zh">跨文化流畅</span></h4>
+          <p><span class="lang-en">Team members have worked in Japan, France, and across China. We understand both Western business expectations and Chinese market realities.</span><span class="lang-zh">团队成员曾在日本、法国和中国各地工作。我们理解西方商业期望和中国市场现实。</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:linear-gradient(135deg,var(--blue-700),var(--blue-600));padding:80px 0;text-align:center;">
+    <div style="position:relative;z-index:1" class="container">
+      <h2 style="color:var(--white);margin-bottom:1rem;font-family:var(--serif)"><span class="lang-en">Want to Meet Our Team?</span><span class="lang-zh">想见见我们的团队？</span></h2>
+      <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 2rem"><span class="lang-en">Schedule a free 30-minute consultation with one of our research directors.</span><span class="lang-zh">预约30分钟免费咨询，与我们的研究总监面谈。</span></p>
+      <a href="contact.html" class="btn btn-red"><span class="lang-en">Contact Us →</span><span class="lang-zh">联系我们 →</span></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div style="display:flex;align-items:center"><a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="images/juyou-logo-blue.png" alt="聚优思维" /></div><span class="nav-logo-text"><span class="lang-en">JuYou Think</span><span class="lang-zh" style="display:none">聚优</span></span></a><span class="footer-tagline">Turning Chinese Consumer Insight into Action</span></div>
+        <ul class="footer-links"><li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li><li><a href="services.html"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li><li><a href="why-us.html"><span class="lang-en">Why Us</span><span class="lang-zh">优势</span></a></li><li><a href="cases.html"><span class="lang-en">Case Studies</span><span class="lang-zh">案例</span></a></li><li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh">团队</span></a></li><li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a></li></ul>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 JuYou Think (聚优思维). All rights reserved.</p><p style="font-size:0.72rem;color:rgba(255,255,255,0.2)">www.juyouthink.com</p></div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.fade-in').forEach(el => {
+      const obs = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)} }), {threshold:0.1});
+      obs.observe(el);
+    });
+  </script>
+  <script src="lang.js"></script>
+</body>
+</html>
